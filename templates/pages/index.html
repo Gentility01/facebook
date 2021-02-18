@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook</title>
+    <!-- style css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- font awesome -->
+    <link rel="stylesheet" 
+    type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <div class="head">
+            <img src="{% static 'images/download2.png' %}" alt="">
+            <input type="search" name="search" placeholder="Search Facebook"></i>
+            <ul>
+                <li>Home</li>
+                <li>Search</li>
+                <li>Group</li>
+                <li>Gaming</li>
+                <li><a  style="color:black;" href="{% url 'profile' %}">Profile</a></li> 
+                 <li class ="nav-item mr-3">
+                    <form action ="{% url 'form' %}" method = "POST"  id ="logout">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn2">Log out</button>
+                 </form>   
+                </li> 
+            </ul>
+
+        </div>
+    </header>
+    <div class="mainbody">
+        <div class="part1">
+            <ul>
+                <li><img class="imgs" src="{% static 'images/GENT.jpg' %}" alt=""><b> {{user.first_name}}   {{user.last_name}}</b></li>
+                <li><img class="imgs" src="{% static 'images/kOxV5aCYUAE.png' %}" alt=""><b>19 information center</b></li>
+                <li><img class="imgs" src="{% static 'images/S0U5ECzYUSu (1).png' %}" alt=""><b>Friends</b></li>
+                <li><img class="imgs" src="{% static 'images/PrjLkDYpYbH.png' %}" alt=""><b>Group</b></li>
+                <li><img class="imgs" src="{% static 'images/duk32h44Y31.png' %}" alt=""><b>Videos</b></li>
+                <li><img class="imgs" src="{% static 'images/8wTx0Eu2vRq.png' %}" alt=""><b>Events</b></li>
+                <li><img class="imgs" src="{% static 'images/VPndBxotRgH.png' %}" alt=""><b>Memories</b></li>
+                <li><img class="imgs" src="{% static 'images/lVijPkTeN-r.png' %}" alt=""><b>Saved</b></li>
+                <li><img class="imgs" src="{% static 'images/kyCAf2jbZvF.png' %}" alt=""><b>Pages</b></li>
+                <li><i class="fa fa-search"></i><b>See More</b></li>
+            </ul>
+        </div>
+        <div class="part2">
+            <div class="cards">
+
+<!-- card1        -->
+            <div class="card1">
+                <img src="{% static 'images/GENT.jpg' %}" alt="">
+                create a story
+            </div>
+<!-- card2 -->
+            <div class="card2">
+                <img src="{% static 'images/imageo.jpg' %}" alt="">
+            </div>
+<!-- card3 -->
+            <div class="card3">
+                <img src="{% static 'images/finished.jpg' %}" alt="">
+            </div>
+<!-- card4 -->
+            <div class="card4">
+                <img src="{% static 'images/IMG_20171231_123729.jpg' %}" alt="">
+            </div>
+<!-- card5 -->
+            <div class="card5">
+                <img src="{% static 'images/4243.jpg' %}" alt="">
+            </div>
+            </div>
+
+            <div class="inner">
+                <img src="{% static 'images/GENT.jpg' %}" alt="">
+                <input type="search" name="search" placeholder="What's on your mind, {{user.first_name}} ?">
+                <hr>
+                <ul>
+                    <li> Live Videos</li>
+                    <li>Photo/Videos</li>
+                    <li>Feeling/Activity</li>
+                </ul>
+            </div>
+            <div class="second-inne">
+                <input type="search" name="search" placeholder="Create Room">
+            </div>
+        </div>
+        <div class="part3"></div>
+    </div>
+</body>
+</html>

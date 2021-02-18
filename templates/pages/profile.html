@@ -1,0 +1,152 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook-profile</title>
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" href="file:///C:/Users/user/Downloads/fontawesome-free-5.15.2-web/fontawesome-free-5.15.2-web/css/all.css">
+</head>
+<body>
+    <div class="container">
+        <div class="profile-header">
+            <div class="profile-img">
+                <img src="{% static 'pictures/color.jpg'%}" width="200" alt="">
+            </div>
+            <div class="profile-nav-info">
+                <h3 class="user-name">Gentle Code </h3>
+                <div class="adress">
+                    <p class="state">New yock</p>
+                    <span class="country">USA</span>
+                </div>
+            </div>
+            <div class="profile-option">
+                <div class="notification">
+                    <i class="fa fa-bell"></i>
+                    <span class="alert-message">1</span>
+                </div>
+            </div>
+        </div>
+        <div class="main-bd">
+            <div class="left-side">
+                <div class="profile-side">
+                    <p class="mobile-no">
+                        <i class="fa fa-phone"></i>
+                        +234789065
+                    </p>
+                    <p class="user-mail">
+                        <i class="fa fa-envelope"></i>
+                        gentle@gmail.com
+                    </p>
+                    <div class="user-bio">
+                        <p class="bio">
+                            <h3>Bio</h3>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
+                         a dolore? Officia corrupti perferendis odio saepe! Quae ipsam corporis
+                         nam eveniet consequatur, commodi optio laudantium odit pariatur itaque
+                         tempore ab temporibus veniam ratione impedit perferendis voluptatum in! Corporis,
+                         soluta. 
+                        </p>
+                        <p><h3>Sur name:  {{user.first_name}}</h3></p>
+                        <p><h3>First name: {{user.last_name}} </h3></p>
+                        <p><h3>Username: {{user.username}} </h3></p>
+                        <p><h3>Phone: {{user.phone}}</h3></p>
+                        <p><h3>Email: {{user.email}} </h3></p>
+
+                        <form action="" method="POST">
+                            {% csrf_token %}
+
+                           <p> {{ userUpdateForm }} </p>
+                           <p>{{profileUpdateForm}} </p>
+
+                        </form>
+
+
+                    </div>
+                    <div class="profile-btn">
+                        <h3></h3>
+                        <button class="chatbtn">
+                            <i class="fa fa-comment"></i>Chat
+                        </button>
+                        <button class="createbtn">
+                            <i class="fa fa-plus"></i>Create
+                        </button>
+                    </div>
+                    <div class="user-rating">
+                        <h3 class="rating">4.5</h3>
+                        <div class="rate">
+                            <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            </div>
+                            <span class="no-user">
+                                <span>123</span>&nbsp; &nbsp; reviews
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="nav">
+                    <ul>
+                        <li onclick="tabs(0)" class="user-post active">Post</li>
+                        <li  onclick="tabs(1)" class="user-review">Reviews</li>
+                        <li onclick="tabs(2)" class="user-setting">Settings</li>
+                    </ul>
+                </div>
+                <div class="profile-body">
+                    <div class="profile-posts tab">
+                        <h1>Your post</h1>
+                        <p>this is gentility the one and only webdeveloper in town with skills and intergrity
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Ullam, modi eius praesentium velit ducimus at, quisquam consectetur
+                            ut voluptatem, ad laudantium asperiores voluptates architecto omnis
+                            minus ea optio repudiandae explicabo!
+                        </p>
+                    </div>
+                    <div class="profile-reviews tab">
+                        <h1>User reviews</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
+                         a dolore? Officia corrupti perferendis odio saepe! Quae ipsam corporis
+                         nam eveniet consequatur, commodi optio laudantium odit pariatur itaque
+                         tempore ab temporibus veniam ratione impedit perferendis voluptatum in! Corporis,
+                         soluta. Dolorum, quos? Corrupti ullam officia, optio error iure rerum molestiae. 
+                         Tempore ullam exercitationem aspernatur voluptates rerum, dignissimos, ratione id 
+                         iure deserunt culpa repudiandae minima perspiciatis soluta blanditiis quod optio rem officiis.
+                        </p>
+                    </div>
+                    <div class="profile-settings tab">
+                        <h1>Account setting</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                             Magnam, vel porro harum enim saepe quia placeat? Ullam maiores aspernatur,
+                              earum quisquam dolor quia ea omnis blanditiis ex quasi
+                              aut explicabo voluptatibus debitis nobis consequatur, alias sed optio voluptatum
+                               eos expedita sunt odit iusto. Dignissimos earum 
+                              iusto eius facilis sit labore, nulla nemo facere ea numquam
+                             blanditiis repudiandae quae praesentium mollitia. Iusto iste similique quas magnam sapiente 
+                             neque ducimus distinctio perspiciatis.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- <script src="./jquery/jquery.js"></script> -->
+    
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,304 @@
+*
+{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+hr
+{
+    width: 95%;
+    margin: 20px;
+    color:  rgb(253, 253, 253);
+    /* border: none; */
+}
+body
+{
+	width: 100%;
+	height: 100%;
+
+}
+.head
+{
+    
+    width: 100%;
+    height: 80px;
+    display: flex;
+    /* margin-top: 10px;  */
+}
+.head img
+{
+  width: 90px;
+  height: 70px;
+  margin: 5px;
+}
+
+.head input
+{
+    height: 40px;
+    width: 7cm;
+    background-color:rgb(228, 226, 226);
+    border: none;
+    font-family: sans-serif;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: none;
+    margin-top: 20px;
+    border-radius: 30px;
+
+}
+.head ul
+{
+    margin-left: 90px;
+    font-size: larger;
+    /* margin-top: 30px; */
+    display: flex;
+}
+
+.head ul li
+{
+    list-style: none;
+    margin: 30px;
+    display: inline;
+    white-space: nowrap;
+}
+.head ul li .btn1
+{
+    background-color: rgb(101, 101, 235);
+    height: 40px;
+    color: #ffffff;
+    border: none;
+    text-decoration: none;
+    border-radius: none;
+    width: 3cm;
+    padding: 10px;
+    border-radius: 30px;
+}
+a
+{
+    text-decoration: none;
+    color: #ffffff;
+}
+.head ul li .btn2
+{
+    background-color: transparent;
+    height: 40px;
+    color: black;
+    border: 1px solid black;
+    border-radius: none;
+    width: 3cm;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+/* mainbody */
+.mainbody
+{
+    
+    height: 35em;
+    display: flex;
+    background-color: rgb(228, 226, 226);
+}
+
+/* mainbody part-1 */
+.mainbody .part1
+{
+    width: 30%;
+    height: 100%;
+}
+.mainbody .part1 .fa
+{
+    margin: 5px;
+    /* padding: 5px; */
+}
+.mainbody .imgs
+{
+    width: 25px;
+    height: 25px;
+    /* margin-left: 2px; */
+    border-radius:50px;
+}
+
+.mainbody .part1 ul li
+{
+    margin: 15px;
+    list-style: none;
+    font-family: serif;
+}
+
+.mainbody .part2
+{
+    
+    width: 50%;
+    height: 100%;
+}
+.mainbody .part2 .cards
+{
+    width: 100%;
+    display: flex;
+    height: 40%;
+}
+
+
+/* card1 */
+.mainbody .part2 .cards .card1
+{
+    
+    font-size: 24px;
+    width: 20%;
+    text-align: center;
+    height: 100%;
+    margin: 5px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.mainbody .part2 .cards .card1 img
+{
+    width: 100%;
+    height: 70%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+/* card2 */
+.mainbody .part2 .cards .card2
+{
+    width: 20%;
+    height: 100%;
+    margin: 5px;
+    
+}
+
+.mainbody .part2 .cards .card2 img
+{
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+}
+
+
+/* card3 */
+.mainbody .part2 .cards .card3
+{
+    width: 20%;
+    height: 100%;
+    margin: 5px;
+    
+}
+.mainbody .part2 .cards .card3 img
+{
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+}
+
+/* card4 */
+.mainbody .part2 .cards .card4
+{
+    width: 20%;
+    height: 100%;
+    margin: 5px;
+    
+}
+.mainbody .part2 .cards .card4 img
+{
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+}
+
+/* card5 */
+.mainbody .part2 .cards .card5
+{
+    width: 20%;
+    height: 100%;
+    margin: 5px;
+    
+    
+}
+.mainbody .part2 .cards .card5 img
+{
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.mainbody .part2 .inner
+{
+    width: 90%;
+    height: 140px;
+    margin: 30px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    
+}
+
+.mainbody .part2 .inner img
+{
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+    border-radius: 40px;
+    vertical-align: middle;
+}
+.mainbody .part2 .inner input
+{
+    width: 85%;
+    height: 50px;
+    margin-top: 0;
+    padding: 10px;
+    border-radius: 20px;
+    border-radius: none;
+    border: none;
+    font-size: 17px;
+    display: inline-block;
+    background-color: rgb(238, 236, 236);
+}
+
+.mainbody .part2 .inner ul
+{
+    display: flex;
+    color: rgb(133, 132, 132);
+    
+
+}
+.mainbody .part2 .inner ul li
+{
+    list-style: none;
+    margin: 0 auto 3px 40px;
+    font-size: larger;
+}
+
+.mainbody .part2 .second-inne
+{
+    width: 90%;
+    height: 80px;
+    margin: 30px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 20px;
+}
+
+.mainbody .part2 .second-inne input
+{
+    width: 40%;
+    height: 40px;
+    border: none;
+    color:blue;
+    font-size: larger;
+    border: 1px solid rgb(195, 195, 199);
+    border-radius: 20px;
+}
+
+
+
+.mainbody .part3
+{
+    width: 20%;
+    height: 100%;
+    border: 1px solid black;
+}
+
+
+

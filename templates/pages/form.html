@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook-form</title>
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+</head>
+<body>
+    <div class="main">
+        <div class="login">
+            <h1><a href="index.html">Facebook</a> </h1>
+            <span>Recent Logins</span> 
+            <p>click your picture or add an account</p> 
+            <div class="recent-login">
+                <div class="card-1">
+                    <img src="{% static 'images/GENT.jpg' %}" alt="">
+                    {{ user.last_name.upper }}
+                </div>
+                <div class="card-2">
+                    <h1>Add Account
+                        <p>+</p>
+                    </h1>
+                </div>
+            </div>
+        </div> 
+        <div class="login-form">
+            <div class="main-form">
+                 <form action="" method="POST">
+                {% csrf_token %}
+                {% if messages %}
+          <ul class= "messages">
+            {% for message in messages %} 
+                <li style="list-style: none; color:red; font-size = larger"
+                {% if message.tags%} class ="{{
+                    message.tag
+                }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}    
+                   <p><input type="text" name="username" placeholder="Username" required></p> 
+                    <p><input type="password" name="password" placeholder="Password" required></p>
+                    <button type="submit" class btn btn-1>Log in</button>
+                </form>
+                forgotten password?
+                <hr>
+                <button type="submit" class="btn btn-2"><a href="{% url 'register' %}">Creare New Account</a> </button>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+</html>
