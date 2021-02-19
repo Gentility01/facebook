@@ -54,13 +54,18 @@
                         <p><h3>Phone: {{user.phone}}</h3></p>
                         <p><h3>Email: {{user.email}} </h3></p>
 
-                        <form action="" method="POST">
-                            {% csrf_token %}
-
-                           <p> {{ userUpdateForm }} </p>
-                           <p>{{profileUpdateForm}} </p>
-
-                        </form>
+                        
+     <form action ="" method ="post" enctype="multipart/form-data">
+               {% csrf_token%}
+              <fieldset class ="form-group">
+                <legend class="border-bottom mb-4"> Profile Info</legend>
+                {{userupdateform}}
+                 {{profileupdateform}}
+              </fieldset>
+              <div class ="form-group">
+                <button type="submit" class =" btn btn-outline-info"> Update</button>
+              </div>
+            </form>
 
 
                     </div>

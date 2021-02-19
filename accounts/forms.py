@@ -4,11 +4,22 @@ from .models import Profile
 from django import forms
 from . import models
 
-class CreateUserForm(UserCreationForm):
+class UserRegistrationForm(UserCreationForm):
+    email = forms.EmailField()
+    last_name = forms.CharField()
+    first_name = forms.CharField()
+   
     class Meta:
         model = User
-        fields =['first_name', 'last_name', 'username', 'email', 'password1', 'password2']
-
+        fields = [
+           'first_name',
+           'last_name',
+           'username',
+           'email',
+           'password1',
+           'password2',
+           
+       ]
 
 #editing user
 
@@ -23,7 +34,7 @@ class UserUpdateForm(forms.ModelForm):
             'email',
         ] 
 
-class  ProfileUpdateForm(forms.ModelForm):
+class  profileUpdateForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = [

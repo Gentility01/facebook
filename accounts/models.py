@@ -16,7 +16,7 @@ class Form(models.Model):
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete = models.CASCADE, related_name='+')
+    user = models.OneToOneField(User, on_delete = models.CASCADE)
     phone = models.IntegerField()
     password = models.CharField(max_length=50)
     slug = models.SlugField()

@@ -1,11 +1,11 @@
 from django.shortcuts import render,redirect
 from . import urls
-from .forms import CreateUserForm,ProfileUpdateForm,UserUpdateForm
+from .forms import UserRegistrationForm, UserUpdateForm, profileUpdateForm
 from django.contrib import auth
 from django.contrib import messages
 from django.contrib.auth import logout
 from django.contrib.auth import login,authenticate
-from django.contrib.auth.forms import UserCreationForm
+# from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
@@ -54,24 +54,37 @@ def register(request):
 
 
 
-def profile(request):
+@login_required
+def profile(request):  
+    # pass the update forms into a variable
+    # to populate this forms with the initial values pass the instance as an argument
+    # attatch the post method for security purposes
+    if request.method == 'POST': 
+        userupdateform = UserUpdateForm(request.POST, instance = request.user)
+        profileupdateform = profileUpdateForm(request.POST, request.FILES, instance = request.user.profile)
 
-    # if request.method == 'POST':
-    #     userUpdateForm = UserUpdateForm(request.POST, instance=request.user)
-    #     profileUpdateForm = ProfileUpdateForm(request.POST, instance=request.user.Profile)
-    # else:
-    #     userUpdateForm = UserUpdateForm(request.POST, instance=request.user)
-    #     profileUpdateForm = ProfileUpdateForm(instance = request.user.Profile)
- 
+        # saving the forms
+        if userupdateform.is_valid() and profileupdateform.is_valid():
+            userupdateform.save()
+            profileupdateform.save()
+            messages.success(request, f'Account updated succedfully')
+            return redirect('login')  
 
+    
 
-    #     context = {
-    #         'userUpdateForm': UserUpdateForm,
-    #         'profileUpdateForm': ProfileUpdateForm
-    #     }  
-        return render(request,'pages/profile.html')
-
-   
+    else:
+        userupdateform = UserUpdateForm()
+        profileupdateform = profileUpdateForm()
+    
+    
+    #create a context for the forms and pass the contex to the profile page
+    context = {
+        'userupdateform':  userupdateform,
+        'profileupdateform': profileupdateform
+    }
+    
+    # this page is to be shown only when user is succesfully logged in
+    return render(request, 'pages/profile.html', context ) 
 
 
 
