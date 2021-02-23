@@ -28,7 +28,8 @@
         <div class="login-form">
             <div class="main-form">
                  <form action="" method="POST">
-                {% csrf_token %}
+                 {% csrf_token %}
+                
                 {% if messages %}
           <ul class= "messages">
             {% for message in messages %} 

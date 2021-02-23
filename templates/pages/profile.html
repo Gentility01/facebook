@@ -9,13 +9,14 @@
     <link rel="stylesheet" href="file:///C:/Users/user/Downloads/fontawesome-free-5.15.2-web/fontawesome-free-5.15.2-web/css/all.css">
 </head>
 <body>
+<p><a href="{% url 'index' %}"><h1>Home</h1></a></p>
     <div class="container">
         <div class="profile-header">
             <div class="profile-img">
                 <img src="{% static 'pictures/color.jpg'%}" width="200" alt="">
             </div>
             <div class="profile-nav-info">
-                <h3 class="user-name">Gentle Code </h3>
+                <h3 class="user-name">{{user.username}} </h3>
                 <div class="adress">
                     <p class="state">New yock</p>
                     <span class="country">USA</span>
