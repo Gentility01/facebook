@@ -9,14 +9,27 @@
     <link rel="stylesheet" href="file:///C:/Users/user/Downloads/fontawesome-free-5.15.2-web/fontawesome-free-5.15.2-web/css/all.css">
 </head>
 <body>
+
 <p><a href="{% url 'index' %}"><h1>Home</h1></a></p>
     <div class="container">
         <div class="profile-header">
             <div class="profile-img">
-                <img src="{% static 'pictures/color.jpg'%}" width="200" alt="">
+                <img src="{{user.profile.image.url}}" width="200" alt="">
             </div>
             <div class="profile-nav-info">
-                <h3 class="user-name">{{user.username}} </h3>
+                <h3 class="user-name">{{user.username}}
+
+                    {% if messages %}
+                             <ul class= "messages">
+                                {% for message in messages %} 
+                                <li style="list-style: none; color:green; font-size = larger"
+                    {% if message.tags%} class ="{{message.tag}}"{% endif %}>{{ message }}</li>
+                        {% endfor %}
+                </ul>
+            {% endif %}   
+
+
+                 </h3>
                 <div class="adress">
                     <p class="state">New yock</p>
                     <span class="country">USA</span>
@@ -38,30 +51,30 @@
                     </p>
                     <p class="user-mail">
                         <i class="fa fa-envelope"></i>
-                        gentle@gmail.com
+                        {{user.email}}
                     </p>
                     <div class="user-bio">
                         <p class="bio">
-                            <h3>Bio</h3>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
+                            <h1>Bio</h1>
+                            {% comment %} Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
                          a dolore? Officia corrupti perferendis odio saepe! Quae ipsam corporis
                          nam eveniet consequatur, commodi optio laudantium odit pariatur itaque
                          tempore ab temporibus veniam ratione impedit perferendis voluptatum in! Corporis,
-                         soluta. 
+                         soluta.  {% endcomment %}
                         </p>
                         <p><h3>Sur name:  {{user.first_name}}</h3></p>
                         <p><h3>First name: {{user.last_name}} </h3></p>
                         <p><h3>Username: {{user.username}} </h3></p>
                         <p><h3>Phone: {{user.phone}}</h3></p>
                         <p><h3>Email: {{user.email}} </h3></p>
-
+ 
                         
-     <form action ="" method ="post" enctype="multipart/form-data">
+     <form action ="" method ="POST" enctype="multipart/form-data">
                {% csrf_token%}
               <fieldset class ="form-group">
                 <legend class="border-bottom mb-4"> Profile Info</legend>
-                {{userupdateform}}
-                 {{profileupdateform}}
+                {{userupdateforms}}
+                 {{profileupdateforms}}
               </fieldset>
               <div class ="form-group">
                 <button type="submit" class =" btn btn-outline-info"> Update</button>

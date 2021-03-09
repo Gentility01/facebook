@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from . import urls
-from .forms import UserRegistrationForm, UserUpdateForm, profileUpdateForm
+from .forms import UserRegistrationForm, UserUpdateForm, ProfileUpdateForm
 from django.contrib import auth
 from django.contrib import messages
 from django.contrib.auth import logout
@@ -55,32 +55,28 @@ def register(request):
 
 
 @login_required
-def profile(request):  
+def profile(request):
     # pass the update forms into a variable
     # to populate this forms with the initial values pass the instance as an argument
     # attatch the post method for security purposes
     if request.method == 'POST': 
-        userupdateform = UserUpdateForm(request.POST, instance = request.user)
-        profileupdateform = profileUpdateForm(request.POST, request.FILES, instance = request.user.profile)
+        userupdateforms = UserUpdateForm(request.POST, instance = request.user)
+        profileupdateforms = ProfileUpdateForm(request.POST, request.FILES, instance = request.user.profile)
 
         # saving the forms
-        if userupdateform.is_valid() and profileupdateform.is_valid():
-            userupdateform.save()
-            profileupdateform.save()
+        if userupdateforms.is_valid() and profileupdateforms.is_valid():
+            userupdateforms.save()
+            profileupdateforms.save()
             messages.success(request, f'Account updated succedfully')
-            return redirect('login')  
-
-    
-
+            return redirect('profile')  
     else:
-        userupdateform = UserUpdateForm()
-        profileupdateform = profileUpdateForm()
-    
+        userupdateforms = UserUpdateForm(instance = request.user)
+        profileupdateforms = ProfileUpdateForm(instance = request.user.profile)
     
     #create a context for the forms and pass the contex to the profile page
     context = {
-        'userupdateform':  userupdateform,
-        'profileupdateform': profileupdateform
+        'userupdateforms':  userupdateforms,
+        'profileupdateforms': profileupdateforms
     }
     
     # this page is to be shown only when user is succesfully logged in

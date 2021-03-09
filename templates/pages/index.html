@@ -35,7 +35,7 @@
     <div class="mainbody">
         <div class="part1">
             <ul>
-                <li><img class="imgs" src="{% static 'images/GENT.jpg' %}" alt=""><b> {{user.first_name}}   {{user.last_name}}</b></li>
+                <li><img class="imgs" src="{{user.profile.image.url}}" alt=""><b> {{user.first_name}}   {{user.last_name}}</b></li>
                 <li><img class="imgs" src="{% static 'images/kOxV5aCYUAE.png' %}" alt=""><b>19 information center</b></li>
                 <li><img class="imgs" src="{% static 'images/S0U5ECzYUSu (1).png' %}" alt=""><b>Friends</b></li>
                 <li><img class="imgs" src="{% static 'images/PrjLkDYpYbH.png' %}" alt=""><b>Group</b></li>
@@ -52,7 +52,7 @@
 
 <!-- card1        -->
             <div class="card1">
-                <img src="{% static 'images/GENT.jpg' %}" alt="">
+                <img src="{{user.profile.image.url}}" alt="">
                 create a story
             </div>
 <!-- card2 -->
@@ -74,7 +74,7 @@
             </div>
 
             <div class="inner">
-                <img src="{% static 'images/GENT.jpg' %}" alt="">
+                <img src="{{user.profile.image.url}}" alt="">
                 <input type="search" name="search" placeholder="What's on your mind, {{user.first_name}} ?">
                 <hr>
                 <ul>
@@ -89,5 +89,6 @@
         </div>
         <div class="part3"></div>
     </div>
+  
 </body>
 </html>
