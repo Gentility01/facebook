@@ -60,7 +60,7 @@ def profile(request):
     # to populate this forms with the initial values pass the instance as an argument
     # attatch the post method for security purposes
     if request.method == 'POST': 
-        userupdateforms = UserUpdateForm(request.POST, instance = request.user)
+        userupdateforms = UserUpdateForm(request.POST, instance = request.user)  
         profileupdateforms = ProfileUpdateForm(request.POST, request.FILES, instance = request.user.profile)
 
         # saving the forms

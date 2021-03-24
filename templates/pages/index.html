@@ -18,7 +18,7 @@
             <input type="search" name="search" placeholder="Search Facebook"></i>
             <ul>
                 <li>Home</li>
-                <li>Search</li>
+                <li><a href="{% url 'post-list' %}" style="color: black;">Notifications</a></li>
                 <li>Group</li>
                 <li>Gaming</li>
                 <li><a  style="color:black;" href="{% url 'profile' %}">Profile</a></li> 
@@ -35,7 +35,12 @@
     <div class="mainbody">
         <div class="part1">
             <ul>
-                <li><img class="imgs" src="{{user.profile.image.url}}" alt=""><b> {{user.first_name}}   {{user.last_name}}</b></li>
+                <a href="{% url 'profile' %}" style=" color:black">
+                    <li>
+                        <img class="imgs" src="{{user.profile.image.url}}" alt="">
+                        <b> {{user.first_name}}   {{user.last_name}}</b>
+                    </li>
+                </a>
                 <li><img class="imgs" src="{% static 'images/kOxV5aCYUAE.png' %}" alt=""><b>19 information center</b></li>
                 <li><img class="imgs" src="{% static 'images/S0U5ECzYUSu (1).png' %}" alt=""><b>Friends</b></li>
                 <li><img class="imgs" src="{% static 'images/PrjLkDYpYbH.png' %}" alt=""><b>Group</b></li>
@@ -75,7 +80,7 @@
 
             <div class="inner">
                 <img src="{{user.profile.image.url}}" alt="">
-                <input type="search" name="search" placeholder="What's on your mind, {{user.first_name}} ?">
+               <a href="{% url 'post-create' %}"> <input type="search" name="search" placeholder="What's on your mind, {{user.first_name}} ?"></a>
                 <hr>
                 <ul>
                     <li> Live Videos</li>
@@ -87,8 +92,11 @@
                 <input type="search" name="search" placeholder="Create Room">
             </div>
         </div>
-        <div class="part3"></div>
+        <div class="part3"></div>  
     </div>
-  
+
+    
+    <div class="section3" style="margin-top: 30%;">sss</div>
+
 </body>
 </html>

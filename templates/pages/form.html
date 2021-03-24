@@ -15,7 +15,7 @@
             <p>click your picture or add an account</p> 
             <div class="recent-login">
                 <div class="card-1">
-                    <img src="{% static 'images/GENT.jpg' %}" alt="">
+                    <img src="{{user.profile.image.url}}" alt="">
                     {{ user.username.upper }}
                 </div>
                 <div class="card-2">
