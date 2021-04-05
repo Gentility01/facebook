@@ -19,19 +19,19 @@ class Form(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete = models.CASCADE)
-    phone = models.IntegerField()
-    password = models.CharField(max_length=50)
-    GENDER_MALE = 0
-    GENDER_FEMALE = 1
-    GENDER_CHOICES = [(GENDER_MALE, 'male'), (GENDER_FEMALE, 'Female')]
-    gender = models.IntegerField(choices=GENDER_CHOICES)
+    # phone = models.IntegerField()
+    # password = models.CharField(max_length=50)
+    # GENDER_MALE = 0
+    # GENDER_FEMALE = 1
+    # GENDER_CHOICES = [(GENDER_MALE, 'male'), (GENDER_FEMALE, 'Female')]
+    # gender = models.IntegerField(choices=GENDER_CHOICES)
     image = models.ImageField(default ='default.jpg', upload_to='profile_pics')
 
     def __str__(self):
         return f"{self.user.username}'s Profile"
 
-    def save(self):
-        super().save()   
+    def save(self, *args, **kawrgs):
+        super().save(*args, **kawrgs)   
 
         img = Image.open(self.image.path)
 
